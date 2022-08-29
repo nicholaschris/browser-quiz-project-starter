@@ -26,6 +26,12 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
   }
 
+  answersListElement.addEventListener('click', checkAnswer);
+
+  function checkAnswer(e) {
+    console.log('clicked', e.target.id);
+  }
+
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
