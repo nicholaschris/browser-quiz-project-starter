@@ -55,6 +55,20 @@ export const quizData = {
           href:
             'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
         },
+      
+      ],
+    },
+
+    {
+      text: 'What are the different ways to declare a JS variable?',
+      answers: {
+        a: 'constant, let, variable',
+        b: 'var, const, let, function',
+        c: 'var, let, const',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
       ],
     },
     // Add more questions here
