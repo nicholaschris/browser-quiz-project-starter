@@ -24,6 +24,7 @@ export const initQuestionPage = () => {
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
+    document.getElementById(key).addEventListener('click', checkQuestion)
   }
 
   document
@@ -36,3 +37,15 @@ const nextQuestion = () => {
 
   initQuestionPage();
 };
+
+const checkQuestion = (event) => {
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+
+  if (event.currentTarget.id === currentQuestion.correct) {
+    console.log('Correct')
+    document.getElementById(event.currentTarget.id).style.borderColor = 'green';
+  } else {
+    console.log('Incorrect')
+    document.getElementById(event.currentTarget.id).style.borderColor = 'red';
+  }
+}
