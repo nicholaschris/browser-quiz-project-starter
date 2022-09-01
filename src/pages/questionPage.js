@@ -15,6 +15,11 @@ export const initQuestionPage = () => {
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
+
+
+
+
+
   const questionElement = createQuestionElement(currentQuestion.text);
 
   ///
@@ -32,19 +37,29 @@ export const initQuestionPage = () => {
       console.log(answerText)
     })
 
-
   }
+
   
+  window.sessionStorage.setItem("currentQuestionIndex",JSON.stringify(quizData.currentQuestionIndex))
+
+
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 };
 
+
+
+
+
 const nextQuestion = () => {
+  
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
   initQuestionPage();
 };
+
+
 
 
 export const timer = document.createElement('label');
