@@ -13,13 +13,29 @@ import { FINISH_QUIZ_BUTTON_ID } from '../constants.js';
 import { timerIntervalId } from '../views/timerViews.js';
 import { initFinishPage } from './finishPage.js';
 
+const shuffle = (array) => {
+  let current = array.length;
+  let temp;
+  let random;
+  while (current > 0) {
+    random = Math.floor(Math.random() * current);
+    current--;
+    temp = array[current];
+    array[current] = array[random];
+    array[random] = temp;
+  }
+
+  return array;
+};
+export const questionsArray = shuffle(quizData.questions);
+
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
-  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+  const currentQuestion = questionsArray[quizData.currentQuestionIndex];
 
-  const amount = quizData.questions.length;
+  const amount = questionsArray.length;
   const questionNumber = `Question [ ${
     quizData.currentQuestionIndex + 1
   } / ${amount} ]`;
@@ -107,7 +123,7 @@ export const initQuestionPage = () => {
   });
 
   const finish = document.getElementById(FINISH_QUIZ_BUTTON_ID);
-  if (quizData.currentQuestionIndex < quizData.questions.length - 1) {
+  if (quizData.currentQuestionIndex < questionsArray.length - 1) {
     finish.hidden = true;
   } else {
     toNextQuestion.hidden = true;

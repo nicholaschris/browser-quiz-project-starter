@@ -25,7 +25,7 @@ export let timerIntervalId = 0;
 let totalSeconds = 0;
 
 export function resetTotalSeconds() {
-    totalSeconds = 0;
+  totalSeconds = 0;
 }
 
 function increaseTimer() {

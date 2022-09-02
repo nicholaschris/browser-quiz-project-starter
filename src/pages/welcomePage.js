@@ -6,7 +6,7 @@ import { initQuestionPage } from './questionPage.js';
 import { setTime, resetTotalSeconds } from '../views/timerViews.js';
 import { quizData } from '../data.js';
 import { time } from '../app.js';
-
+import { questionsArray } from './questionPage.js';
 export const initWelcomePage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
@@ -22,10 +22,10 @@ export const initWelcomePage = () => {
 // let totalSeconds = 0;
 
 export const startQuiz = () => {
-  resetTotalSeconds()
+  resetTotalSeconds();
   quizData.currentQuestionIndex = 0;
-  for (let i = 0; i < quizData.questions.length; i++) {
-    quizData.questions[i].selected = null;
+  for (let i = 0; i < questionsArray.length; i++) {
+    questionsArray[i].selected = null;
   }
   quizData.rightAnswers = 0;
   quizData.wrongAnswers = 0;
