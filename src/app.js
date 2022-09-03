@@ -7,6 +7,7 @@ import { createTimerElement } from './views/timerViews.js';
 import { initQuestionPage } from './pages/questionPage.js';
 
 import { setTime } from './views/timerViews.js';
+import { shuffle } from './pages/utilities.js';
 
 const body = document.body;
 export const time = createTimerElement();
@@ -35,6 +36,8 @@ const loadApp = () => {
     initQuestionPage();
     setTime(true);
   } else {
+    const questionsArrayShuffled = shuffle(quizData.questions)
+    window.sessionStorage.setItem('questionsArray', JSON.stringify(questionsArrayShuffled))
     initWelcomePage();
   }
 };
