@@ -5,7 +5,6 @@ import { createWelcomeElement } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
 import { setTime, resetTotalSeconds } from '../views/timerViews.js';
 import { quizData } from '../data.js';
-import { time } from '../app.js';
 export const initWelcomePage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
@@ -35,6 +34,5 @@ export const startQuiz = () => {
   quizData.result.wrong = 0;
   quizData.result.skipped = 0;
   initQuestionPage();
-  time.hidden = false;
   setTime(true);
 };

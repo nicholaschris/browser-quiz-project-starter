@@ -8,7 +8,7 @@ import { initQuestionPage } from './pages/questionPage.js';
 
 import { setTime } from './views/timerViews.js';
 import { shuffle } from './pages/utilities.js';
-
+import { resetTotalSeconds } from './views/timerViews.js';
 const body = document.body;
 export const time = createTimerElement();
 time.style.position = 'absolute';
@@ -31,6 +31,9 @@ const loadApp = () => {
 
   let rightAnswers = window.sessionStorage.getItem('rightAnswers');
   quizData.rightAnswers = JSON.parse(rightAnswers) || 0;
+
+  let totalSeconds = window.sessionStorage.getItem('totalSeconds');
+  quizData.totalSeconds = JSON.parse(totalSeconds) || 0;
 
   if (currentQuestionIndex) {
     initQuestionPage();
