@@ -76,3 +76,12 @@ p {
   padding: 5px;
   margin: 10px 285px;
 }
+
+#hintDiv {
+  border: 1px solid rgb(242, 232, 232);
+  background-color: #bbcbe0;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 20px;
+  margin: 0 auto;
+}

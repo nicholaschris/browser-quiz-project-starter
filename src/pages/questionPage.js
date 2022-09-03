@@ -33,7 +33,7 @@ export const initQuestionPage = () => {
   const skipped = `Skipped [ ${quizData.skippedQuestions} / ${amount} ]`;
 
   const questionElement = createQuestionElement(
-    currentQuestion.text,
+    currentQuestion,
     questionNumber,
     score,
     wrongAnswer,
@@ -115,16 +115,15 @@ export const initQuestionPage = () => {
     }
   });
 
+let hintDiv = document.getElementById("hintDiv")
+hintDiv.style.display ="none"
   const hint = document.getElementById(HINT_QUIZ_BUTTON_ID);
   hint.addEventListener('click', () => {
     if (currentQuestion.selected === null) {
      quizData.questions[currentQuestion.explanation]
-
-    //  <script>
-     hint.style.display = "block";
-    
+     
+     hintDiv.style.display = "block"
       
-    
       quizData.skippedQuestions++;
       quizData.result.skipped++;
     }
