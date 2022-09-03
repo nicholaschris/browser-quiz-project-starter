@@ -34,11 +34,8 @@ const loadApp = () => {
   if (currentQuestionIndex) {
     initQuestionPage();
     setTime(true);
-
-    console.log('session true', currentQuestionIndex);
   } else {
     initWelcomePage();
-    console.log('session false', currentQuestionIndex);
   }
 };
 
