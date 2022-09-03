@@ -10,6 +10,7 @@ import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { SKIP_QUESTION_BUTTON_ID } from '../constants.js';
 import { FINISH_QUIZ_BUTTON_ID } from '../constants.js';
+import { HINT_QUIZ_BUTTON_ID } from '../constants.js';
 import { timerIntervalId } from '../views/timerViews.js';
 import { initFinishPage } from './finishPage.js';
 import { time } from '../app.js';
@@ -113,6 +114,22 @@ export const initQuestionPage = () => {
       quizData.result.skipped++;
     }
   });
+
+  const hint = document.getElementById(HINT_QUIZ_BUTTON_ID);
+  hint.addEventListener('click', () => {
+    if (currentQuestion.selected === null) {
+     quizData.questions[currentQuestion.explanation]
+
+    //  <script>
+     hint.style.display = "block";
+    
+      
+    
+      quizData.skippedQuestions++;
+      quizData.result.skipped++;
+    }
+  });
+
 
   const finish = document.getElementById(FINISH_QUIZ_BUTTON_ID);
   if (quizData.currentQuestionIndex < quizData.questions.length - 1) {

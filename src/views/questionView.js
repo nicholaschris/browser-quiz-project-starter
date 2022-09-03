@@ -4,7 +4,7 @@ import { ANSWERS_LIST_ID } from '../constants.js';
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { SKIP_QUESTION_BUTTON_ID } from '../constants.js';
 import { FINISH_QUIZ_BUTTON_ID } from '../constants.js';
-
+import {HINT_QUIZ_BUTTON_ID} from '../constants.js';
 /**
  * Create a full question element
  * @returns {Element}
@@ -27,6 +27,7 @@ export const createQuestionElement = (question, current, good, bad, skip) => {
       <hr>
       <button id="${NEXT_QUESTION_BUTTON_ID}">Next question</button>
       <button id="${SKIP_QUESTION_BUTTON_ID}">Skip question</button>
-      <button id="${FINISH_QUIZ_BUTTON_ID}">Finish</button>`;
+      <button id="${FINISH_QUIZ_BUTTON_ID}">Finish</button>
+      <button id="${HINT_QUIZ_BUTTON_ID}">hint</button>`;
   return element;
 };
