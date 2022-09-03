@@ -10,7 +10,7 @@ export const initFinishPage = () => {
   const welcomeElement = createFinishElement();
   userInterface.appendChild(welcomeElement);
 
-  window.sessionStorage.clear('currentQuestionIndex');
+  window.sessionStorage.clear();
 
   document
     .getElementById(START_QUIZ_BUTTON_ID)
